@@ -128,7 +128,7 @@ def decide(me,df):
                move_options.remove('R')
 
     #print(move_options)
-    if move_options is None:
+    if not move_options:
        return "T"
     else:
        return move_options[random.randrange(len(move_options))]
@@ -179,5 +179,5 @@ def can_move_west(me,df):
        return True
 
 if __name__ == "__main__":
-  app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8070)))
+  app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
   
