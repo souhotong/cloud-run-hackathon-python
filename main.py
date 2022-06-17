@@ -29,7 +29,8 @@ def index():
     return "Let the battle begin!"
 
 @app.route("/", methods=['POST'])
-request.get_data()
+def move():
+    request.get_data()
     logger.info(request.json)
     return move['T']
     #return moves[random.randrange(len(moves))]
