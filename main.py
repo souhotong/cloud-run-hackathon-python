@@ -32,7 +32,7 @@ def index():
 def move():
     request.get_data()
     logger.info(request.json)
-    return moves['T']
+    return moves[1]
     #return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
