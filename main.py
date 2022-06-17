@@ -29,22 +29,10 @@ def index():
     return "Let the battle begin!"
 
 @app.route("/", methods=['POST'])
-def move():
-    r = request.get_data()
-    ourh = 'https://da-cloud-run-hackathon-python-vdqrirch4a-uc.a.run.app'
-    #logger.info(request.json)
-    logger.info(request.json['arena']['state'][ourh])
-    if request.json['arena']['state'][ourh].get('x') != 0:
-        if request.json['arena']['state'][ourh].get('direction') !='S':
-            return moves['L']
-    elif  request.json['arena']['state'][ourh].get('y') is not 0:
-        if request.json['arena']['state'][ourh].get('direction') != 'W':
-            return moves['L']
-        
-    elif request.json['arena']['state'][ourh].get('direction') != 'N':
-        return moves['R']
-    else:
-        return moves['T']
-
+request.get_data()
+    logger.info(request.json)
+    return move['T']
+    #return moves[random.randrange(len(moves))]
+    
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
