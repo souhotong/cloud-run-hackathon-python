@@ -34,14 +34,14 @@ def move():
     ourh = 'https://da-cloud-run-hackathon-python-vdqrirch4a-uc.a.run.app'
     #logger.info(request.json)
     logger.info(request.json['arena']['state'][ourh])
-    if request.json['arena']['state'][ourh].get('x') is not 0:
-        if request.json['arena']['state'][ourh].get('direction') is not 'S':
+    if request.json['arena']['state'][ourh].get('x') != 0:
+        if request.json['arena']['state'][ourh].get('direction') !='S':
             return moves['L']
     elif  request.json['arena']['state'][ourh].get('y') is not 0:
-        if request.json['arena']['state'][ourh].get('direction') is not 'W':
+        if request.json['arena']['state'][ourh].get('direction') != 'W':
             return moves['L']
         
-    elif request.json['arena']['state'][ourh].get('direction') is not 'N':
+    elif request.json['arena']['state'][ourh].get('direction') != 'N':
         return moves['R']
     else:
         return moves['T']
